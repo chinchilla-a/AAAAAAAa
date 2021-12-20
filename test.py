@@ -33,7 +33,8 @@ class Telegram_test(unittest.TestCase):
         user = MagicMock(first_name=name)
         chat = MagicMock(id=123)
         message = MagicMock(from_user=user, chat=chat)
+        call_1 = MagicMock(message = message)
         MockClient.get_me.return_value = MagicMock(first_name='bot')
-        bot1.nea1(message)
+        bot1.nea1(call_1)
         calls = [call(123, 'Уверен?', reply_markup=ANY)]
         MockClient.send_message.assert_has_calls(calls)
