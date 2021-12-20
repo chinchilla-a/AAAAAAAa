@@ -28,12 +28,12 @@ class Telegram_test(unittest.TestCase):
         MockClient.send_message.assert_has_calls(calls)
 
     @mock.patch('bot1.client')
-    def test_nea_vic(self, MockClient):
+    def test_nea1(self, MockClient):
         name = 'test'
         user = MagicMock(first_name=name)
         chat = MagicMock(id=123)
         message = MagicMock(from_user=user, chat=chat)
         MockClient.get_me.return_value = MagicMock(first_name='bot')
-        bot1.nea_vic(message)
-        calls = [call(123, "Супер! Тогда давай продолжать", reply_markup=ANY)]
+        bot1.nea1(message)
+        calls = [call(123, 'Уверен?', reply_markup=ANY)]
         MockClient.send_message.assert_has_calls(calls)

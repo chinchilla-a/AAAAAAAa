@@ -1,4 +1,3 @@
-telebot
-configure
+pyTelegramBotAPI   4.2.2
 unittest
 random
